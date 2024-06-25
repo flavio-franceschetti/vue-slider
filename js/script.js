@@ -4,7 +4,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      active: 0,
+      activeValue: 0,
       images: [
         "img/01.webp",
         "img/02.webp",
@@ -32,5 +32,23 @@ createApp({
       ],
     };
   },
-  methods: {},
+  methods: {
+    // funzione per l'evento click sul tasto next
+    nextBtn() {
+      this.activeValue++;
+
+      if (this.activeValue > this.images.length - 1) {
+        this.activeValue = 0;
+      }
+    },
+
+    // funzione per l'evento click sul tasto prev
+    prevBtn() {
+      this.activeValue--;
+
+      if (this.activeValue < 0) {
+        this.activeValue = this.images.length - 1;
+      }
+    },
+  },
 }).mount("#app");
