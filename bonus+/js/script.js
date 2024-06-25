@@ -50,5 +50,11 @@ createApp({
         this.activeValue = this.images.length - 1;
       }
     },
+
+    // funzione per attivare il click sulle thumb
+    thumbClick(index) {
+      console.log(index);
+      this.activeValue = index;
+    },
   },
 }).mount("#app");

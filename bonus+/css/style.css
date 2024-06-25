@@ -33,6 +33,7 @@
 }
 
 .thumbs {
+  cursor: pointer;
   float: left;
   height: 300px;
   background: #000;

@@ -28,6 +28,7 @@
             <div class="next" @click="nextBtn"></div>
             <div
               v-for="(thumb, index) in images"
+              @click="thumbClick(index)"
               class="thumb"
               :class="activeValue === index ? 'active' : ''"
               :key="index"
