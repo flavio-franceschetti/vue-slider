@@ -32,6 +32,11 @@ createApp({
       ],
     };
   },
+  mounted() {
+    setInterval(() => {
+      this.nextBtn();
+    }, 3000);
+  },
   methods: {
     // funzione per l'evento click sul tasto next
     nextBtn() {
