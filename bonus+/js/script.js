@@ -5,6 +5,7 @@ createApp({
   data() {
     return {
       activeValue: 0,
+      autoPlay: "",
       images: [
         "img/01.webp",
         "img/02.webp",
@@ -33,7 +34,7 @@ createApp({
     };
   },
   mounted() {
-    setInterval(() => {
+    this.autoPlay = setInterval(() => {
       this.nextBtn();
     }, 3000);
   },
@@ -60,6 +61,16 @@ createApp({
     thumbClick(index) {
       console.log(index);
       this.activeValue = index;
+    },
+
+    stop() {
+      clearInterval(this.autoPlay);
+    },
+
+    start() {
+      this.autoPlay = setInterval(() => {
+        this.nextBtn();
+      }, 3000);
     },
   },
 }).mount("#app");

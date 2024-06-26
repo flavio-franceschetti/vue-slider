@@ -12,7 +12,12 @@
   <body>
     <div id="app">
       <div class="container">
-        <div class="slider-wrapper" tabindex="0">
+        <div
+          class="slider-wrapper"
+          @mouseover="stop"
+          @mouseleave="start"
+          tabindex="0"
+        >
           <div class="item">
             <!-- sostituisco tutti gli elementi statici rendendoli dinamici tramite Vue js -->
             <img :src="images[activeValue]" :alt="titles[activeValue]" />
